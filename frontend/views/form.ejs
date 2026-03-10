@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>User Form</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fdfdfd;
+            padding: 45px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-style: italic;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-top: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>User Form</h2>
+    <form action="/submit" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
