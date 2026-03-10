@@ -133,6 +133,8 @@ http://localhost:5000/submit
 Frontend: `tp109/full-stack-frontend`  
 Backend: `tp109/full-stack-backend`
 
+![alt text](image.png)
+
 ## Push Images to Docker Hub
 
 ```bash
