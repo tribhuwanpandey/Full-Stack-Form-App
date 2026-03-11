@@ -15,19 +15,28 @@ The form automatically adds **date and time when submitted** and stores it in **
 ```
 Full-Stack-Form-App/
 │
-├── backend/
-│   ├── app.py            # Flask backend
-│   └── Dockerfile
+├── base-image/
+│   ├── backend/
+│   │   ├── app.py            # Flask backend
+│   │   └── Dockerfile
+│   │
+│   ├── frontend/
+│   │   ├── server.js         # Node.js + Express frontend
+│   │   ├── views/
+│   │   │   ├── form.ejs
+│   │   │   └── success.ejs
+│   │   └── Dockerfile
 │
-├── frontend/
-│   ├── server.js         # Node.js + Express frontend
-│   ├── views/
-│   │   ├── form.ejs
-│   │   └── success.ejs
-│   └── Dockerfile
+├── 01-docker-compose-deployment/
+│   ├── docker-compose.yml
+│   ├── README.md
+│   └── screenshots/
+│       ├── Screenshot 2026-03-10 153201.png
+│       ├── Screenshot 2026-03-10 153216.png
+│       ├── Screenshot 2026-03-10 153228.png
+│       └── image.png
 │
-├── docker-compose.yml
-└── README.md
+└── .gitignore                
 ```
 
 ---
@@ -49,7 +58,7 @@ Full-Stack-Form-App/
 
 ```bash
 git clone https://github.com/tribhuwanpandey/Full-Stack-Form-App.git
-cd Full-Stack-Form-App
+cd ~/Full-Stack-Form-App/01-docker-compose-deployment
 ```
 
 ## Create `.gitignore`
@@ -66,27 +75,28 @@ __pycache__/
 ## Install frontend dependencies
 
 ```bash
-cd frontend
+cd ../base-image/frontend
 npm install
-cd ..
+cd ../../01-docker-compose-deployment
 ```
 
 ## Run backend locally
 
 ```bash
-cd backend
+cd ../base-image/backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python3 app.py
-cd ..
+cd ../../01-docker-compose-deployment
 ```
 
 ## Run frontend locally
 
 ```bash
-cd frontend
+cd ../base-image/frontend
 node server.js
+cd ../../01-docker-compose-deployment
 ```
 
 Open:
@@ -104,8 +114,8 @@ Submit the form → check the success page → data stored in **MongoDB Atlas**.
 ## Build Docker Images
 
 ```bash
-docker build -t tp109/full-stack-frontend ./frontend
-docker build -t tp109/full-stack-backend ./backend
+docker build -t tp109/full-stack-frontend ../base-image/frontend
+docker build -t tp109/full-stack-backend ../base-image/backend
 ```
 
 ## Run using Docker Compose
@@ -133,7 +143,7 @@ http://localhost:5000/submit
 Frontend: `tp109/full-stack-frontend`  
 Backend: `tp109/full-stack-backend`
 
-![alt text](image.png)
+![Docker Images Overview](screenshots/image.png)
 
 ## Push Images to Docker Hub
 
@@ -158,14 +168,14 @@ Images are publicly available for deployment anywhere.
 
 # Screenshots
 
-**Form Page:** Classic layout with input fields  
+**Form Page:** Classic layout with input fields
 
-![alt text](<Screenshot 2026-03-10 153228.png>)
+![Form Page](screenshots/Screenshot 2026-03-10 153228.png)
 
-**Success Page:** Shows name, email, date, and time  
+**Success Page:** Shows name, email, date, and time
 
-![alt text](<Screenshot 2026-03-10 153216.png>)
+![Success Page](screenshots/Screenshot 2026-03-10 153216.png)
 
 **MongoDB Atlas:** Data stored with timestamp
 
-![alt text](<Screenshot 2026-03-10 153201.png>)
+![MongoDB Atlas](screenshots/Screenshot 2026-03-10 153201.png)
