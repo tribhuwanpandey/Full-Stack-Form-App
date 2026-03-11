@@ -170,12 +170,12 @@ Images are publicly available for deployment anywhere.
 
 **Form Page:** Classic layout with input fields
 
-![Form Page](screenshots/Screenshot 2026-03-10 153228.png)
+![Form Page](screenshots/Screenshot-2026-03-10-153228.png)
 
 **Success Page:** Shows name, email, date, and time
 
-![Success Page](screenshots/Screenshot 2026-03-10 153216.png)
+![Success Page](screenshots/Screenshot-2026-03-10-153216.png)
 
 **MongoDB Atlas:** Data stored with timestamp
 
-![MongoDB Atlas](screenshots/Screenshot 2026-03-10 153201.png)
+![MongoDB Atlas](screenshots/Screenshot-2026-03-10-153201.png)
