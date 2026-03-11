@@ -1,0 +1,23 @@
+version: '3'
+services:
+  backend:
+    image: tp109/full-stack-backend:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  frontend:
+    image: tp109/full-stack-frontend:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - FLASK_URL=http://backend:5000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
