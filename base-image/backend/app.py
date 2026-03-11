@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all domains
 
 
-client = MongoClient("mongodb+srv://tribhuwanpandey733_db_user:12345@dummy.xk7k54n.mongodb.net/?appName=dummy")
+client = MongoClient("mongodb+srv://tribhuwanpandey733_db_user:fkeEgCHbzTDNWzLI@dummy.g1fulwh.mongodb.net/?appName=dummy")
 
 db = client["formdb"]
 collection = db["users"]
@@ -39,4 +39,5 @@ def submit():
         }), 500
 
 if __name__ == "__main__":
+
     app.run(host="0.0.0.0", port=5000)
