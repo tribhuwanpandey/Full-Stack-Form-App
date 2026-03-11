@@ -135,7 +135,7 @@ cd Full-Stack-Form-App/02-single-ec2-deployment
 # Pull latest images from Docker Hub
 docker-compose pull
 
-screenshots/Screenshot-2016-03-11-174137.png
+![docker-compose pull](screenshots/Screenshot-2016-03-11-174137.png)
 
 # Start in detached mode (background)
 docker-compose up -d
@@ -143,7 +143,7 @@ docker-compose up -d
 # Verify both containers are running
 docker-compose ps
 
-screenshots/Screenshot-2026-03-11-174208.png
+![docker-compose-ps](screenshots/Screenshot-2026-03-11-174208.png)
 
 ```
 
@@ -162,11 +162,11 @@ Open in browser:
 ```
 http://35.172.226.110:3000    ← Express frontend form
 
-screenshots/Screenshot-2026-03-11-173942.png
+![frontend](screenshots/Screenshot-2026-03-11-173942.png)
 
 http://35.172.226.110:5000    ← Flask backend direct
 
-screenshots/Screenshot-2026-03-11-173956.png
+![backend](screenshots/Screenshot-2026-03-11-173956.png)
 
 ```
 
